@@ -17,11 +17,13 @@ if [ ! -z "$(type -p podman)" ]; then
   CMD=podman
 fi
 
+echo $PWD && ls -al $PWD
+
 (set -x;
   $CMD run \
     --rm \
     --volume=$PWD:/chromedp \
-    --entrypoint=/chromedp/chromedp.test \
+    --entrypoint=/chromedp/chromedp-action.test \
     --workdir=/chromedp \
     --env=PATH=/headless-shell \
     --env=HEADLESS_SHELL=1 \

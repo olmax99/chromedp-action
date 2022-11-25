@@ -34,7 +34,11 @@ func ExampleTitle() {
 	defer ts.Close()
 
 	var title string
+<<<<<<< HEAD
 	fmt.Println("URL: ", ts.URL)
+=======
+	// fmt.Println("URL: ", ts.URL)
+>>>>>>> 7e98cedfb973934eec3f5151a0ee44a70ce4a5a2
 	if err := chromedp.Run(ctx,
 		chromedp.Navigate(ts.URL),
 		chromedp.Title(&title),
