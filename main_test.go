@@ -33,14 +33,10 @@ func ExampleTitle() {
 	`))
 	defer ts.Close()
 
-	var title string
-<<<<<<< HEAD
-	fmt.Println("URL: ", ts.URL)
-=======
-	// fmt.Println("URL: ", ts.URL)
->>>>>>> 7e98cedfb973934eec3f5151a0ee44a70ce4a5a2
+	var title string = "time package - time - Go Packages"
+
 	if err := chromedp.Run(ctx,
-		chromedp.Navigate(ts.URL),
+		chromedp.Navigate(`https://pkg.go.dev/time`),
 		chromedp.Title(&title),
 	); err != nil {
 		log.Fatal(err)
@@ -48,5 +44,5 @@ func ExampleTitle() {
 	fmt.Println(title)
 
 	// Output:
-	// fancy website title
+	// time package - time - Go Packages
 }
